@@ -1,6 +1,6 @@
 # project
 
-# to do
+## to do
 #### Anto : 
 - [ ] Alignment 
 - [ ] Cohesion
