@@ -1,16 +1,16 @@
 # project
 
 # to do
-Anto : 
-    Alignment 
-    Cohesion
+##Anto : 
+- [ ] Alignment 
+- [ ] Cohesion
 
-Matt : 
-    Separation
-    Walls
-    Drawings
+##Matt : 
+- [ ] Separation
+- [ ] Walls
+- [ ] Drawings
 
-Tris :
-    Class
-    UI
-    Painting tool
+##Tris :
+- [ ] Class
+- [ ] UI
+- [ ] Painting tool
