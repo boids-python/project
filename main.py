@@ -1,2 +1,4 @@
 #coding:utf-8
-test test blah blah
+class Boids():
+  def __init__(self):
+    pass
