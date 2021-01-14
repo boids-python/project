@@ -11,6 +11,6 @@
 - [ ] Drawings
 
 #### Tris :
-- [ ] Class
+- [x] Class
 - [ ] UI
-- [ ] Painting tool
+- [x] Painting tool
