@@ -2,6 +2,8 @@ import pygame as pg
 from pygame.locals import *
 from math import cos, sin, radians
 from random import randint, uniform
+#bleu
+
 
 class Boid():
 
