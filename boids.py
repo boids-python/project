@@ -2,7 +2,6 @@ import pygame as pg
 from pygame.locals import *
 from math import cos, sin, radians
 from random import randint, uniform
-# bleu
 
 
 class Boid():
@@ -95,11 +94,11 @@ class Boid():
 
     """
         Explications :
-            scan(r) --> r c le rayon que l'on veux scanner; ça retourne une liste de listes des coords des boids se trouvant autour de ce boid.
+            scan() --> r c le rayon que l'on veux scanner; ça retourne une liste de listes des coords des boids se trouvant autour de ce boid.
     """
-    # Méthodes Mattéo
+    #Méthodes Mattéo
 
-    # Méthodes Antonin
+    #Méthodes Antonin
 
 
 if __name__ == "__main__":
