@@ -14,7 +14,7 @@ class Boid():
         self.boid_img = pg.transform.scale(self.boid_img, (bs, bs))
 
         self.r = pg.transform.rotate
-        self.boid_img = self.r(self.boid_img, -45)
+        self.boid_img = self.r(self.boid_img, -135)
 
         self.boidObject = self.boid_img
         self.x = self.root.get_width()/2-self.boidObject.get_width()/2
@@ -96,9 +96,13 @@ class Boid():
         Explications :
             scan(r) --> r c le rayon que l'on veux scanner; ça retourne une liste de listes des coords des boids se trouvant autour de ce boid.
     """
-    #Méthodes Mattéo
+    # Méthodes Mattéo
 
-    #Méthodes Antonin
+    # Méthodes Antonin
+    def Alignment(self, ok):
+        if ok:
+            radAlign = 10
+            scan(radAlign)
 
 
 if __name__ == "__main__":
@@ -108,7 +112,7 @@ if __name__ == "__main__":
     root = pg.display.set_mode((500, 500))
     clock = pg.time.Clock()
 
-    boids = [Boid(root, 20) for i in range(1)]
+    boids = [Boid(root, 15) for i in range(1)]
     for boid in boids:
         boid.otherB = boids
 
