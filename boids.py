@@ -34,7 +34,7 @@ class Boid():
     def scan(self, r):
         out=[]
         for i in self.otherB:
-            if self.x-r<=i.x<=self.x+r and self.y-r<=i.y<=self.y+r and i!=self: out.append([i.x, i.y, i])
+            if self.x-r<=i.x<=self.x+r and self.y-r<=i.y<=self.y+r and i!=self: out.append([i.x, i.y, i.a1, i])
         return out
 
     def blit(self): self.root.blit(self.boidObject, (self.x, self.y))
