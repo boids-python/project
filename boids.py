@@ -94,7 +94,7 @@ class Boid():
 
     """
         Explications :
-            scan() --> r c le rayon que l'on veux scanner; ça retourne une liste de listes des coords des boids se trouvant autour de ce boid.
+            scan(r) --> r c le rayon que l'on veux scanner; ça retourne une liste de listes des coords des boids se trouvant autour de ce boid.
     """
     #Méthodes Mattéo
 
