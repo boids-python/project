@@ -1,6 +1,6 @@
 import pygame as pg
 from pygame.locals import *
-from math import cos, sin, radians
+from math import cos, sin, radians, sqrt
 from random import randint, uniform
 
 
@@ -26,8 +26,8 @@ class Boid():
         self.otherB = []
 
     def aleaMove(self):
-        if uniform(0, 1) > .991:
-            self.orient(randint(0, 360))
+        if uniform(0, 1) > .1:
+            self.orient(self.a1+uniform(-5, 5))
 
         self.animRL()
         self.move()
@@ -35,8 +35,9 @@ class Boid():
 
     def scan(self, r):
         out = []
+        a = self.boid_img.get_width()//2
         for i in self.otherB:
-            if self.x-r <= i.x <= self.x+r and self.y-r <= i.y <= self.y+r and i != self:
+            if sqrt((i.x-self.x)**2+(i.y-self.y)**2) <= r and self != i:
                 out.append([i.x, i.y, i.a1, i])
         return out
 
@@ -80,6 +81,7 @@ class Boid():
                 self.y = self.root.get_height()
 
     def step(self, ok=[True, True, True]):
+        
         """
             Remplacer l'un des 0 par l'appel de votre méthode.
             Au debut de votre méthode penser à mettre une condition True/False, pour qu'elle s'effectue sinon retourner 0. Ca servira dans le menu d'options pour enlever les
@@ -99,20 +101,19 @@ class Boid():
     # Méthodes Mattéo
 
     # Méthodes Antonin
-    def Alignment(self, ok):
+    def Align(self, r, ok):
         if ok:
-            radAlign = 10
-            scan(radAlign)
+            voisins = scan(r)
 
 
 if __name__ == "__main__":
     pg.init()
 
     pg.display.set_caption('Boids')
-    root = pg.display.set_mode((500, 500))
+    root = pg.display.set_mode((500, 500), RESIZABLE)
     clock = pg.time.Clock()
 
-    boids = [Boid(root, 15) for i in range(1)]
+    boids = [Boid(root, 15) for i in range(4)]
     for boid in boids:
         boid.otherB = boids
 
@@ -125,7 +126,12 @@ if __name__ == "__main__":
         root.fill((244, 234, 232))
 
         for boid in boids:
-            boid.step()
+            boid.aleaMove()
+        a = boids[0].boid_img.get_width()//2
+        pg.draw.circle(root, (255, 0, 0), (boids[0].x+a, boids[0].y+a), 75, 1)
+        pg.draw.circle(root, (0, 255, 0), (boids[0].x+a, boids[0].y+a), 150, 1)
+        pg.draw.circle(root, (0, 0, 255), (boids[0].x+a, boids[0].y+a), 40, 1)
+        print(boids[0].scan(150))
 
         clock.tick(24)
 
